@@ -1,0 +1,15 @@
+npm init
+npm i mongoose
+npm i express
+npm i nodemon
+
+entrypoint app.js
+
+to run: npm start
+
+router : programmer.js
+model : user.js
+app.js
+
+package.json
+"start" : "nodemon app.js" 
