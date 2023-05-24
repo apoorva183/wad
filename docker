@@ -1,0 +1,9 @@
+INSTALLING DOCKER ENGINE -
+Ref : https://docs.docker.com/engine/install/ubuntu/
+
+Is link mein “***Install using the apt repository***” is heading ke niche wala follow karna hai …until hello world image milti hain & then
+
+CONTAINERIZE AN APPLICATION -
+Ref : https://docs.docker.com/get-started/02_our_app/
+
+Ye exact tutorial follow kiya jisme TO-DO list ka application containerize hota hain
