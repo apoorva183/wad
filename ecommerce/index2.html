@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Application</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS styles */
+    .sidebar {
+      background-color: #f8f9fa;
+      padding: 20px;
+      height: 100vh;
+    }
+
+    .sidebar-item {
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .sidebar-item.active {
+      font-weight: bold;
+    }
+
+    .sales-card {
+      margin-bottom: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+  <script>
+    // JavaScript to handle sidebar item click event and show respective products
+    document.addEventListener('DOMContentLoaded', function() {
+      const sidebarItems = document.querySelectorAll('.sidebar-item');
+      const productCards = document.querySelectorAll('.product-card');
+
+      sidebarItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+          // Remove active class from all sidebar items
+          sidebarItems.forEach(function(item) {
+            item.classList.remove('active');
+          });
+
+          // Add active class to the clicked sidebar item
+          this.classList.add('active');
+
+          // Hide all product cards
+          productCards.forEach(function(card) {
+            card.classList.add('hidden');
+          });
+
+          // Show the respective product cards
+          const categoryId = this.dataset.categoryId;
+          const categoryCards = document.querySelectorAll(`.product-card[data-category-id="${categoryId}"]`);
+          categoryCards.forEach(function(card) {
+            card.classList.remove('hidden');
+          });
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 sidebar">
+        <h4>Sidebar</h4>
+        <div class="sidebar-item active" data-category-id="1">Category 1</div>
+        <div class="sidebar-item" data-category-id="2">Category 2</div>
+        <div class="sidebar-item" data-category-id="3">Category 3</div>
+        <!-- Add more sidebar items here -->
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-9">
+        <h2>Sales Statistics</h2>
+        <div class="row">
+          <div class="col-md-4 product-card" data-category-id="1">
+            <div class="card sales-card">
+              <img src="product1.jpg" class="card-img-top" alt="Product 1">
+              <div class="card-body">
+                <h5 class="card-title">Product 1</h5>
+                <p class="card-text">Sales: 500</p>
+                <p class="card-text">Revenue: $10,000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 product-card" data-category-id="2">
+            <div class="card sales-card">
+              <img src="product2.jpg" class="card-img-top" alt="Product 2">
+              <div class="card-body">
+                <h5 class="card-title">Product 2</h5>
+                <p class="card-text">Sales: 300</p>
+                <p class="card-text">Revenue: $6,000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 product-card" data-category-id="3">
+            <div class="card sales-card">
+              <img src="product3.jpg" class="card-img-top" alt="Product 3">
+              <div class="card-body">
+                <h5 class="card-title">Product 3</h5>
+                <p class="card-text">Sales: 200</p>
+                <p class="card-text">Revenue: $4,000</p>
+              </div>
+            </div>
+          </div>
+          <!-- Add more product cards here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
