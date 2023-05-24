@@ -1,0 +1,5 @@
+npm init -y
+npm install express
+mkdir public
+creat inex.html, styles.css
+node server.js
