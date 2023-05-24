@@ -14,3 +14,80 @@ git remote add origin https://github.com/apoorva183/gitcomm.git
  PULL:: git fetch 
  git pull
  
+ git status
+
+
+git init  initialization of git repo
+
+
+git add - -a  adding all files to staging area  // git add first.txt  // git add .
+
+
+git commit -m “msg”  committing to git repo
+git commit –amend   to change commit msg    i to edit    esc+:+w+q+enter
+
+
+git  log to know all committed files
+git log -p to get exact info about lines that are added and deleted
+git log -p -1
+git log - - stat short summary
+git log --pretty=one line to get all commit info in one line
+git log - -since=2.days work done in last two days
+git log --pretty=format:”%h”- - “%an/ae”   abbreviated hash commit and author name/email
+
+
+
+
+rm -rf .git delete git repo
+
+
+Git.gitignore  ignore those files which are not need to be tracked
+
+
+git diff  compare the staging area and working directory
+
+
+git diff -- staged  compare last commit to current staging area
+
+
+git commit -a -m “msg”  directly commit tracked files in repo 
+but untracked files need to be staged first
+
+
+git rm  delete and staged
+
+git mv  move and staged
+
+git rm -- cached file_name  to untrack file
+
+git clone “url” req folder name
+
+git restore - - staged “file name”  to unstage the staged file
+
+git checkout - -”file name”    to unchange the modified changes /to meet the last commit
+git checkout -f  to unchange all the changes happened after the last commit
+
+{working with remote directory}
+
+
+git config - - global alias.st status  to give shortcut to long reserved words
+git config - - global alias.unstage ‘restore - -staged - - ’
+git config - - global alias.last ‘log -p -1 ’
+
+
+git checkout -b “branch name”   to create new branch
+git checkout master    to shift to master
+git branch   gives list of branches present
+
+git remote add origin https://github.com/NupurShelokar/learnig.git
+giving  url a name “origin”
+
+git remote -v
+
+git branch -v  gives branches names with commit hash and message
+
+
+git branch - - merged
+git branch - -no-merged
+git branch -d develop  delete and gives error if file is tried ti get deleted without merging
+git branch -D develop  delete without any error
